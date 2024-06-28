@@ -19,6 +19,15 @@
               <p>Dashboard</p>
             </a>
           </li>
+
+          <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="kunjungan" class="nav-link">
+              <i class="nav-icon fa fa-file"></i> 
+              <p>Kunjungan</p>
+            </a>
+          </li>
           
           <?php if ( $levelLogin === "admin" ) { ?>
           <li class="nav-item">
@@ -27,6 +36,8 @@
               <p>Upload</p>
             </a>
           </li>
+
+        
           <?php } ?>
           <?php if ( $levelLogin === "admin" ) { ?>
           <li class="nav-item">
