@@ -68,7 +68,14 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["tgl_kunjungan"] . "</td>";
 
                 echo "<td>" . $row["created_at"] . "</td>";
-                echo "<td><a href='edit-kunjungan.php?id=" . $row["id"] . "'>Edit</a></td>";
+            
+                echo "<td>";
+                echo "<a href='edit-kunjungan.php?id=" . $row["id"] . "' class='btn btn-warning btn-sm'><i class='fa fa-edit'></i> Edit</a>";
+                echo "&nbsp;&nbsp;";
+                echo "<a href='view-kunjungan.php?id=" . $row["id"] . "' class='btn btn-info btn-sm'><i class='fa fa-search'></i> View</a>";
+                echo "&nbsp;&nbsp;";
+echo "<a href='delete-kunjungan.php?id=" . $row["id"] . "' class='btn btn-danger btn-sm'><i class='fa fa-trash'></i> Delete</a>";
+echo "</td>";
                 echo "</tr>";
             }
         } else {
