@@ -29,6 +29,7 @@
             </a>
           </li>
           
+          <!-- 
           <?php if ( $levelLogin === "admin" ) { ?>
           <li class="nav-item">
             <a href="upload" class="nav-link">
@@ -36,7 +37,7 @@
               <p>Upload</p>
             </a>
           </li>
-
+-->
         
           <?php } ?>
           <?php if ( $levelLogin === "admin" ) { ?>
