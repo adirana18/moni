@@ -97,6 +97,7 @@ $resultRekap = $conn->query($sqlRekap);
                         <div class="tambah-data">
                         <a href="add-kunjungan" class="btn btn-primary">Tambah Data</a>
                         <a href="report-kunjungan" class="btn btn-success"><i class="fa fa-download"></i> Unduh Laporan</a>
+                        <a href="report-ceklist" class="btn btn-success"><i class="fa fa-download"></i> Unduh Ceklist IT </a>
                     </div>
                         <div class="card-body">
                             <table class="table table-bordered table-striped">
