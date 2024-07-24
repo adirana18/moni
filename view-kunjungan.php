@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
     $nama_store = $_POST["nama_store"];
     $tgl_kunjungan = $_POST["tgl_kunjungan"];
     $catatan = $_POST['catatan'];
+    $nama_pejabat = $_POST['nama_pejabat'];
+    $nik_pejabat = $_POST['nik_pejabat'];
+
 
     // Mengelola upload file foto_before
     if ($_FILES['foto_before']['name']) {
@@ -70,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Input Data Kunjungan</h1>
+            <h1>Data Kunjungan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -115,6 +118,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
                           <input type="text" id="nama_store" name="nama_store" class="form-control" value="<?php echo $row['nama_store']; ?>" readonly required>
                         </div> 
                         <div class="form-group">
+                          <label for="nama_store">Nama Pejabat:</label>
+                          <input type="text" id="nama_pejabat" name="nama_pejabat" class="form-control" value="<?php echo $row['nama_pejabat']; ?>" readonly required>
+                        </div> 
+                        <div class="form-group">
+                          <label for="nama_store">Nik Pejabat:</label>
+                          <input type="text" id="nik_pejabat" name="nik_pejabat" class="form-control" value="<?php echo $row['nik_pejabat']; ?>" readonly required>
+                        </div> 
+                       
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                        <div class="form-group">
                           <label for="tgl_kunjungan">Tanggal Kunjungan:</label>
                           <input type="date" id="tgl_kunjungan" name="tgl_kunjungan" class="form-control" value="<?php echo $row['tgl_kunjungan']; ?>" readonly required>
                         </div>
@@ -122,9 +137,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
                           <label for="catatan">Catatan:</label>
                           <textarea id="catatan" name="catatan"  readonly class="form-control" rows="3" placeholder="Masukkan catatan jika diperlukan"><?php echo $row['catatan']; ?></textarea>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <div class="form-group">
                           <label for="foto_before">Foto Before:</label>
                          
                           <?php if (!empty($row['foto_before'])): ?>

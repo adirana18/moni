@@ -11,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama_store = isset($_POST['nama_store']) ? $_POST['nama_store'] : '';
     $tgl_kunjungan = isset($_POST['tgl_kunjungan']) ? $_POST['tgl_kunjungan'] : '';
     $catatan = isset($_POST['catatan']) ? $_POST['catatan'] : '';
+    $nama_pejabat = isset($_POST['nama_pejabat']) ? $_POST['nama_pejabat'] : '';
+    $nik_pejabat = isset($_POST['nik_pejabat']) ? $_POST['nik_pejabat'] : '';
     
     // Lanjutkan dengan pemrosesan form
 
@@ -27,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (move_uploaded_file($foto_before['tmp_name'], $foto_before_path) && move_uploaded_file($foto_after['tmp_name'], $foto_after_path)) {
         // Insert data into database (use prepared statements or escape inputs if not already sanitized)
-        $sql = "INSERT INTO kunjungan (nama, kode_toko, nama_store, tgl_kunjungan, foto_before, foto_after, catatan)
-                VALUES ('$nama', '$kode_toko', '$nama_store', '$tgl_kunjungan', '$foto_before_path', '$foto_after_path', '$catatan')";
+        $sql = "INSERT INTO kunjungan (nama, kode_toko, nama_store, tgl_kunjungan, foto_before, foto_after, catatan,nama_pejabat,nik_pejabat)
+                VALUES ('$nama', '$kode_toko', '$nama_store', '$tgl_kunjungan', '$foto_before_path', '$foto_after_path', '$catatan','$nama_pejabat','$nik_pejabat')";
 
         if ($conn->query($sql) === TRUE) {
             $success_message = "
@@ -105,11 +107,20 @@ $conn->close();
                           <input type="text" id="nama_store" name="nama_store" class="form-control" placeholder="Nama Store" required>
                         </div> 
                         <div class="form-group">
+                          <label for="nama_store">Nama Pejabat:</label>
+                          <input type="text" id="nama_pejabat" name="nama_pejabat" class="form-control" placeholder="Nama Pejabat" required>
+                        </div> 
+                        <div class="form-group">
+                          <label for="nama_store">Nik Pejabat:</label>
+                          <input type="text" id="nik_pejabat" name="nik_pejabat" class="form-control" placeholder="Nik Pejabat" required>
+                        </div> 
+                        
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                      <div class="form-group">
                           <label for="tgl_kunjungan">Tanggal Kunjungan:</label>
                           <input type="date" id="tgl_kunjungan" name="tgl_kunjungan" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
                         <div class="form-group">
                           <label for="before">Foto Before:</label>
                           <input type="file" id="foto_before" name="foto_before" accept="image/*" class="form-control" required>

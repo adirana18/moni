@@ -27,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
     $nama_store = $_POST["nama_store"];
     $tgl_kunjungan = $_POST["tgl_kunjungan"];
     $catatan = $_POST['catatan'];
+    $nama_pejabat = $_POST['nama_pejabat'];
+    $nik_pejabat = $_POST['nik_pejabat'];
 
     // Mengelola upload file foto_before
     if ($_FILES['foto_before']['name']) {
@@ -43,16 +45,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
     } else {
         $foto_after = $_POST['existing_foto_after'];
     }
-
     $sql = "UPDATE kunjungan SET 
-            nama='$nama', 
-            kode_toko='$kode_toko', 
-            nama_store='$nama_store', 
-            tgl_kunjungan='$tgl_kunjungan', 
-            foto_before='$foto_before', 
-            foto_after='$foto_after', 
-            catatan='$catatan'
-            WHERE id='$id'";
+    nama='$nama', 
+    kode_toko='$kode_toko', 
+    nama_store='$nama_store', 
+    tgl_kunjungan='$tgl_kunjungan', 
+    foto_before='$foto_before', 
+    foto_after='$foto_after', 
+    catatan='$catatan',
+    nama_pejabat='$nama_pejabat',
+    nik_pejabat='$nik_pejabat'
+WHERE id='$id'";
+
 
     if ($conn->query($sql) === TRUE) {
         header("Location: kunjungan.php"); // Kembali ke halaman utama setelah update
@@ -70,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Input Data Kunjungan</h1>
+            <h1>Edit Data Kunjungan</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -115,6 +119,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
                           <input type="text" id="nama_store" name="nama_store" class="form-control" value="<?php echo $row['nama_store']; ?>" required>
                         </div> 
                         <div class="form-group">
+                          <label for="nama_store">Nama Pejabat:</label>
+                          <input type="text" id="nama_pejabat" name="nama_pejabat" class="form-control" value="<?php echo $row['nama_pejabat']; ?>" required>
+                        </div> 
+                        <div class="form-group">
+                          <label for="nama_store">Nik Pejabat:</label>
+                          <input type="text" id="nik_pejabat" name="nik_pejabat" class="form-control" value="<?php echo $row['nik_pejabat']; ?>" required>
+                        </div> 
+                        
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
                           <label for="tgl_kunjungan">Tanggal Kunjungan:</label>
                           <input type="date" id="tgl_kunjungan" name="tgl_kunjungan" class="form-control" value="<?php echo $row['tgl_kunjungan']; ?>" required>
                         </div>
@@ -122,8 +137,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
                           <label for="catatan">Catatan:</label>
                           <textarea id="catatan" name="catatan" class="form-control" rows="3" placeholder="Masukkan catatan jika diperlukan"><?php echo $row['catatan']; ?></textarea>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
                         <div class="form-group">
                           <label for="foto_before">Foto Before:</label>
                           <input type="file" id="foto_before" name="foto_before" accept="image/*" class="form-control">
