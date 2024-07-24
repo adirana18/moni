@@ -63,6 +63,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
 
+<style>
+  .invisible-space {
+    visibility: hidden;
+  }
+</style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -134,6 +139,12 @@ $conn->close();
                           <label for="PDT">PDT</label>
                           <input type="text" name="PDT" class="form-control" id="PDT" placeholder="Enter PDT" >
                         </div>
+                       
+                        
+                    </div>
+
+
+                        <div class="col-md-6 col-lg-6">
                         <div class="form-group">
                           <label for="KONEKSI">Koneksi</label>
                           <input type="text" name="KONEKSI" class="form-control" id="KONEKSI" placeholder="Enter Koneksi" >
@@ -146,8 +157,7 @@ $conn->close();
                           <label for="VENDOR_KONEKSI">Vendor Koneksi</label>
                           <input type="text" name="VENDOR_KONEKSI" class="form-control" id="VENDOR_KONEKSI" placeholder="Enter Vendor Koneksi" >
                         </div>
-                    </div>
-                        <div class="col-md-6 col-lg-6">
+
                             <div class="form-group">
                             <label for="S_MERK">Server Merk</label>
                             <input type="text" name="S_MERK" class="form-control" id="S_MERK" placeholder="Enter Server Merk" >
@@ -168,7 +178,13 @@ $conn->close();
                             <label for="S_TYPE_STORAGE">Server Type Storage</label>
                             <input type="text" name="S_TYPE_STORAGE" class="form-control" id="S_TYPE_STORAGE" placeholder="Enter Server Type Storage" >
                             </div>
-                            <!-- Kasir 2-->
+
+                            </div>
+                            <!-- Kasir 1-->
+
+                            
+          
+                            <div class="col-md-6 col-lg-6">
                             <div class="form-group">
                             <label for="K1_MERK">Kasir 1 Merk</label>
                             <input type="text" name="K1_MERK" class="form-control" id="K1_MERK" placeholder="Enter Komputer 1 Merk" >
@@ -189,9 +205,15 @@ $conn->close();
                             <label for="K1_TYPE_STORAGE">Kasir 1 Type Storage</label>
                             <input type="text" name="K1_TYPE_STORAGE" class="form-control" id="K1_TYPE_STORAGE" placeholder="Enter Komputer 1 Type Storage" >
                             </div>
+                            </div>
+                           
+                        
                         
 
                             <!-- Kasir 2-->
+                            
+                            <div class="col-md-6 col-lg-6">
+                          
                             <div class="form-group">
                             <label for="K2_MERK">Kasir 2 Merk</label>
                             <input type="text" name="K2_MERK" class="form-control" id="K2_MERK" placeholder="Enter Komputer 2 Merk" >
@@ -212,9 +234,12 @@ $conn->close();
                             <label for="K2_TYPE_STORAGE">Kasir 2 Type Storage</label>
                             <input type="text" name="K2_TYPE_STORAGE" class="form-control" id="K2_TYPE_STORAGE" placeholder="Enter kasie 2 Type Storage" >
                             </div>
+                            </div>
+                           
 
 
                             <!-- Kasir 3-->
+                            <div class="col-md-6 col-lg-6">
                             <div class="form-group">
                             <label for="K3_MERK">Kasir 3 Merk</label>
                             <input type="text" name="K3_MERK" class="form-control" id="K3_MERK" placeholder="Enter kasir 3 Merk" >
@@ -235,8 +260,35 @@ $conn->close();
                             <label for="K3_TYPE_STORAGE">Kasir 3 Type Storage</label>
                             <input type="text" name="K3_TYPE_STORAGE" class="form-control" id="K3_TYPE_STORAGE" placeholder="Enter kasir 3 Type Storage" >
                             </div>
-                        </div>
+                            </div>
+                            
+                            
+                            <!-- Kasir 3-->
+                            <div class="col-md-6 col-lg-6">
+                            <div class="form-group">
+                            <label for="K4_MERK">Kasir 4 Merk</label>
+                            <input type="text" name="K4_MERK" class="form-control" id="K3_MERK" placeholder="Enter kasir 4 Merk" >
+                            </div>
+                            <div class="form-group">
+                            <label for="K4_PROCESSOR">Kasir 4 Processor</label>
+                            <input type="text" name="K1_PROCESSOR" class="form-control" id="K4_PROCESSOR" placeholder="Enter kasir 4 Processor" >
+                            </div>
+                            <div class="form-group">
+                            <label for="K4_MEMORI">Kasir 4 Memori</label>
+                            <input type="text" name="K4_MEMORI" class="form-control" id="K4_MEMORI" placeholder="Enter kasir 4 Memori" >
+                            </div>
+                            <div class="form-group">
+                            <label for="K4_KAPASITAS_STORAGE">Kasir 4 Kapasitas Storage</label>
+                            <input type="text" name="K4_KAPASITAS_STORAGE" class="form-control" id="K4_KAPASITAS_STORAGE" placeholder="Enter kasir 4 Kapasitas Storage" >
+                            </div>
+                            <div class="form-group">
+                            <label for="K4_TYPE_STORAGE">Kasir 4 Type Storage</label>
+                            <input type="text" name="K4_TYPE_STORAGE" class="form-control" id="K4_TYPE_STORAGE" placeholder="Enter kasir 4 Type Storage" >
+                            </div>
+                            </div>
+                            
                   </div>
+                  
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer text-right">
