@@ -88,14 +88,12 @@
 							<small><b>Clear</b></small>
 						</a>
 					</div><br>
-
 					<div class="container-login100-form-btn">
-						<button type="submit" class="login100-form-btn" name="submit">
-							Login
-						</button>
-					</div>
-					
-					
+    <a href="assets-login/fonts/mg/mg" class="login100-form-btn">
+        Login
+    </a>
+</div>
+
 				</form>
 
 				<div class="login100-more" style="background-image: url('assets-login/images/logo.png');">
