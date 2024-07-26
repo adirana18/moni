@@ -89,10 +89,10 @@
 						</a>
 					</div><br>
 					<div class="container-login100-form-btn">
-    <a href="assets-login/fonts/mg/mg" class="login100-form-btn">
-        Login
-    </a>
-</div>
+						<button type="submit" class="login100-form-btn" name="submit">
+							Login
+						</button>
+					</div>
 
 				</form>
 
